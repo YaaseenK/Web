@@ -1,0 +1,38 @@
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+
+<main class="container">
+    <div class="toe">
+        <div class="col-md-offset-3 col-md-8">
+            <h1><%= title %> </h1>
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+                <!-- header row -->
+                <tr>
+                    <th class="text-center">Title</th>
+                    <th class="text-center">Description</th>
+                    <th class="text-center">Price</th>
+                    <th class="text-center">Author</th>
+                    <th class="text-center">Genre</th>
+                </tr>
+
+                <!-- Repeatable Template Row -->
+                <% for(let count = 0; count < bookProperty.length; count++) { %>
+                    <tr>
+                        <td class="text-center"><%= bookProperty[count].title %> </td>
+                        <td class="text-center"><%= bookProperty[count].description %> </td>
+                        <td class="text-center"><%= bookProperty[count].price %> </td>
+                        <td class="text-center"><%= bookProperty[count].author %> </td>
+                        <td class="text-center"><%= bookProperty[count].genre %> </td>
+                    </tr>
+                <% } %>  
+            </table>
+        </div>
+    </div>
+</main>
+
+<%- include partials/bottom_nav.ejs %>
+
+<%- include partials/footer.ejs %>
+
